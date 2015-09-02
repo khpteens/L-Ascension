@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+    <head>        
+        <title>Touch Test</title> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/2.3.0/phaser.min.js"></script>        
+    </head>
+    <body>
+        <div id="phaser">Phaser.js canvas</div>
+        <p>I'm making a phaser.js game that uses key presses in combination to accomplish specific actions. Some of the puzzles require that you hold all 4 keys down at the same time.</p>
+        <p>This works fine for the english key selection (T E A and M) however the french keys N O U and S won't register that they are all pressed at the same time.</p>
+        <p>Help!</p>
+        <br/>        
+        <div id="T">The T key is up</div>
+        <div id="E">The E key is up</div>
+        <div id="A">The A key is up</div>
+        <div id="M">The M key is up</div>
+        <br/>
+        <div id="N">The N key is up</div>
+        <div id="O">The O key is up</div>
+        <div id="U">The U key is up</div>
+        <div id="S">The S key is up</div>
+        <script>
+        var game = new Phaser.Game(50, 50, Phaser.AUTO, 'phaser', { create: create });
+        var T_Key,E_Key,A_Key,M_Key,N_Key,O_Key,U_Key,S_Key;
+        
+        function create() {
+
+            // create hotkeys
+            createKey(T_Key, "T", Phaser.Keyboard.T);
+            createKey(E_Key, "E", Phaser.Keyboard.E);
+            createKey(A_Key, "A", Phaser.Keyboard.A);
+            createKey(M_Key, "M", Phaser.Keyboard.M);
+
+            createKey(N_Key, "N", Phaser.Keyboard.C);
+            createKey(O_Key, "O", Phaser.Keyboard.L);
+            createKey(U_Key, "U", Phaser.Keyboard.U);
+            createKey(S_Key, "S", Phaser.Keyboard.B);
+
+        }        
+        function createKey(myKey, name, phaserHandle){
+            myKey = game.input.keyboard.addKey(phaserHandle);
+            myKey.onDown.add(keyDown, this);
+            myKey.onUp.add(keyUp, this);
+            myKey.name = name;            
+        }
+        function keyDown(e) {
+            document.getElementById(e.name).innerHTML = "The " + e.name +  " key is down";
+        }
+        function keyUp(e) {
+            document.getElementById(e.name).innerHTML = "The " + e.name +  " key is up";
+        }
+        </script>        
+    </body>
+</html>
