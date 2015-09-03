@@ -31,14 +31,15 @@ var settings = {
 
 if (settings.RATIO <= settings.RATIO_MIN) {
 	settings.RATIO = settings.RATIO_MIN; // shortest is 500px by 550px
-}else if(settings.RATIO > settings.RATIO_MAX){
+} else if (settings.RATIO > settings.RATIO_MAX) {
 	settings.RATIO = settings.RATIO_MAX; // tallest is 500px by 800px, 
 }
 
 settings.HEIGHT = settings.RATIO * settings.WIDTH;
 
 var copyright_txt = "© Coin des Gars",
-	release_txt = "Version candidate | 2.sept.2015";
+	release_txt = "Version candidate | 3.sept.2015",
+	fullscreenBt;
 
 trace(settings.NAME + " | " + release_txt);
 
@@ -148,10 +149,10 @@ function createBt(button, label_text, target_state, shape, iconImage) {
 
 
 	if (target_state != false && target_state != undefined) {
-		button.events.onInputUp.add(function() {			
-			if(!hasTouch){
+		button.events.onInputUp.add(function() {
+			if (!hasTouch) {
 				Climb.game.stateTransition.to(target_state);
-			}else{
+			} else {
 				Climb.game.state.start(target_state);
 			}
 		}, this);
@@ -205,7 +206,7 @@ function createCopyright() {
 		style = copyright_style,
 		copyright_shift = 10;
 	if (st === "Game") {
-		style = copyright_style_dark;		
+		style = copyright_style_dark;
 	}
 
 	// add copyright text	
@@ -232,12 +233,13 @@ function createSoundScreenToggles() {
 	// });
 
 	// fullscreenBt
-	var fullscreenBt = Climb.game.add.sprite(Climb.game.width - 15, Climb.game.height - 15, "square");
-	createBt(fullscreenBt, "icon-expand", false, "square-small");
+	fullscreenBt = Climb.game.add.sprite(Climb.game.width - 15, Climb.game.height - 15, "square");
+	createBt(fullscreenBt, "icon-fullscreen", false, "square-small");
+	if (settings.FULLSCREEN) fullscreenBt.label.frame = 1;
 	fullscreenBt.group.fixedToCamera = true;
 	fullscreenBt.events.onInputUp.add(function() {
 		fullscreenToggle();
-	});	
+	});
 }
 
 function openInNewTab(url) {
@@ -250,11 +252,11 @@ function soundToggle() {
 	if (!settings.SOUND_ON) {
 		settings.SOUND_ON = true;
 		settings.VOLUME = 0.2;
-		trace("Sound On");
+		soundBt.label.frame = 0;
 	} else {
-		settings.SOUND_ON = false,
-			settings.VOLUME = 0;
-		trace("Sound Off");
+		settings.SOUND_ON = false;
+		settings.VOLUME = 0;
+		soundBt.label.frame = 1;
 	}
 }
 
@@ -271,6 +273,8 @@ function fullscreenToggle() {
 		settings.FRAME.style.width = window.innerWidth + "px";
 		settings.FRAME.style.height = window.innerHeight + "px";
 
+		fullscreenBt.label.frame = 1;
+
 	} else {
 		settings.FULLSCREEN = false;
 
@@ -278,11 +282,13 @@ function fullscreenToggle() {
 		settings.FRAME.style.position = "relative";
 		settings.FRAME.style.width = settings.FRAME_WIDTH;
 		settings.FRAME.style.height = settings.FRAME_HEIGHT;
+
+		fullscreenBt.label.frame = 0;
 	}
 }
 
 function createScreenshot() {
 
 	var url = document.getElementById("game").childNodes[0].toDataURL('png');
-	openInNewTab(url);    
+	openInNewTab(url);
 }

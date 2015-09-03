@@ -15,10 +15,10 @@
         <div id="A">The A key is up</div>
         <div id="M">The M key is up</div>
         <br/>
-        <div id="N">The N key is up</div>
-        <div id="O">The O key is up</div>
+        <div id="C">The C key is up</div>
+        <div id="L">The L key is up</div>
         <div id="U">The U key is up</div>
-        <div id="S">The S key is up</div>
+        <div id="B">The B key is up</div>
         <script>
         var game = new Phaser.Game(50, 50, Phaser.AUTO, 'phaser', { create: create });
         var T_Key,E_Key,A_Key,M_Key,N_Key,O_Key,U_Key,S_Key;
@@ -31,10 +31,10 @@
             createKey(A_Key, "A", Phaser.Keyboard.A);
             createKey(M_Key, "M", Phaser.Keyboard.M);
 
-            createKey(N_Key, "N", Phaser.Keyboard.C);
-            createKey(O_Key, "O", Phaser.Keyboard.L);
+            createKey(N_Key, "C", Phaser.Keyboard.C);
+            createKey(O_Key, "L", Phaser.Keyboard.L);
             createKey(U_Key, "U", Phaser.Keyboard.U);
-            createKey(S_Key, "S", Phaser.Keyboard.B);
+            createKey(S_Key, "B", Phaser.Keyboard.B);           
 
         }        
         function createKey(myKey, name, phaserHandle){

@@ -69,6 +69,10 @@ Climb.Preload.prototype = {
 		this.load.image('bg-mountains', 'assets/img/bg-mountains.png');
 		this.load.image('fg-mountains', 'assets/img/fg-mountain.png');
 
+		// spritesheets
+		// this.load.spritesheet('icon-sound', 'assets/img/i/soundOnOff.png', 60, 60);
+		this.load.spritesheet('icon-fullscreen', 'assets/img/i/expand-contract.png', 60, 60);
+
 		this.load.spritesheet('goat', 'assets/img/goat.png', 47, 56, 13); // goat		
 
 		this.load.spritesheet('av-t', 'assets/img/av-n.png', 69, 100, 13); // 101	
