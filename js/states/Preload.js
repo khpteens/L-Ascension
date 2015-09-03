@@ -75,10 +75,10 @@ Climb.Preload.prototype = {
 
 		this.load.spritesheet('goat', 'assets/img/goat.png', 47, 56, 13); // goat		
 
-		this.load.spritesheet('av-t', 'assets/img/av-n.png', 69, 100, 13); // 101	
-		this.load.spritesheet('av-e', 'assets/img/av-o.png', 74, 100, 13); // 102
-		this.load.spritesheet('av-a', 'assets/img/av-u.png', 72, 100, 13); // 101
-		this.load.spritesheet('av-m', 'assets/img/av-s.png', 72, 100, 13); // 102
+		this.load.spritesheet('av-a', 'assets/img/av-a.png', 74, 100, 13); // 101	
+		this.load.spritesheet('av-m', 'assets/img/av-m.png', 76, 100, 13); // 102
+		this.load.spritesheet('av-i', 'assets/img/av-i.png', 72, 100, 13); // 101
+		this.load.spritesheet('av-s', 'assets/img/av-s.png', 72, 100, 13); // 102
 
 		// Audio        
 		//this.load.audio('hit1', 'assets/audio/bat_hit_ball.mp3');		

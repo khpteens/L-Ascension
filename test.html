@@ -10,15 +10,15 @@
         <p>This works fine for the english key selection (T E A and M) however the french keys N O U and S won't register that they are all pressed at the same time.</p>
         <p>Help!</p>
         <br/>        
-        <div id="T">The T key is up</div>
-        <div id="E">The E key is up</div>
-        <div id="A">The A key is up</div>
-        <div id="M">The M key is up</div>
+        <div id="A">The T key is up</div>
+        <div id="M">The E key is up</div>
+        <div id="I">The A key is up</div>
+        <div id="S">The M key is up</div>
         <br/>
-        <div id="C">The C key is up</div>
+        <!-- <div id="C">The C key is up</div>
         <div id="L">The L key is up</div>
         <div id="U">The U key is up</div>
-        <div id="B">The B key is up</div>
+        <div id="B">The B key is up</div> -->
         <script>
         var game = new Phaser.Game(50, 50, Phaser.AUTO, 'phaser', { create: create });
         var T_Key,E_Key,A_Key,M_Key,N_Key,O_Key,U_Key,S_Key;
@@ -26,15 +26,15 @@
         function create() {
 
             // create hotkeys
-            createKey(T_Key, "T", Phaser.Keyboard.T);
-            createKey(E_Key, "E", Phaser.Keyboard.E);
-            createKey(A_Key, "A", Phaser.Keyboard.A);
-            createKey(M_Key, "M", Phaser.Keyboard.M);
+            createKey(T_Key, "A", Phaser.Keyboard.A);
+            createKey(E_Key, "M", Phaser.Keyboard.M);
+            createKey(A_Key, "I", Phaser.Keyboard.I);
+            createKey(M_Key, "S", Phaser.Keyboard.S);
 
-            createKey(N_Key, "C", Phaser.Keyboard.C);
-            createKey(O_Key, "L", Phaser.Keyboard.L);
-            createKey(U_Key, "U", Phaser.Keyboard.U);
-            createKey(S_Key, "B", Phaser.Keyboard.B);           
+            // createKey(N_Key, "C", Phaser.Keyboard.C);
+            // createKey(O_Key, "L", Phaser.Keyboard.L);
+            // createKey(U_Key, "U", Phaser.Keyboard.U);
+            // createKey(S_Key, "B", Phaser.Keyboard.B);           
 
         }        
         function createKey(myKey, name, phaserHandle){

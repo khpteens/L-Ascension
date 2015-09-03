@@ -37,7 +37,7 @@ function createInstructions() {
 
 	// create and add text sprite telling the player they have won    
 
-	var text = "1. Appuie sur les touches N, O, U et S\nsur ton clavier.\n\n";	
+	var text = "1. Appuie sur les touches A, M, I et S\nsur ton clavier.\n\n";	
 	text += "2. Maintiens les touches enfoncées pour\naider tes grimpeurs à gravir la montagne.\n\n";
 	text += "3. Les grimpeurs peuvent s’entraider en\ntirant leurs co-équipiers vers le haut.\n\n";
 	text += "4. Pour gagner, tu dois atteindre\nle sommet.";

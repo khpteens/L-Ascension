@@ -477,25 +477,25 @@ function createClimbers() {
 
     var startX = Climb.game.world.height - 300;
 
-    T = climbers.create(40 - 36, startX, 'av-t');
+    T = climbers.create(40 - 36, startX, 'av-a');
     T.key = T_Key;
     T.button = T_button;
-    T.name = "N";
+    T.name = "A";
     createClimber(T);
 
-    E = climbers.create(110 - 36, startX, 'av-e');
+    E = climbers.create(110 - 36, startX, 'av-m');
     E.key = E_Key;
     E.button = E_button;
-    E.name = "O";
+    E.name = "M";
     createClimber(E)
 
-    A = climbers.create(180 - 36, startX, 'av-a');
+    A = climbers.create(180 - 36, startX, 'av-i');
     A.key = A_Key;
     A.button = A_button;
-    A.name = "U";
+    A.name = "I";
     createClimber(A);
 
-    M = climbers.create(250 - 36, startX, 'av-m');
+    M = climbers.create(250 - 36, startX, 'av-s');
     M.key = M_Key;
     M.button = M_button;
     M.name = "S";
@@ -671,19 +671,19 @@ function createInputs() {
 
 function createInputKeys() {
 
-    T_Key = Climb.game.input.keyboard.addKey(Phaser.Keyboard.N);
+    T_Key = Climb.game.input.keyboard.addKey(Phaser.Keyboard.A);
     T_Key.onDown.add(keyDown, this);
     T_Key.onUp.add(keyUp, this);
     T_Key.climber = T;
     T.key = T_Key;
 
-    E_Key = Climb.game.input.keyboard.addKey(Phaser.Keyboard.O);
+    E_Key = Climb.game.input.keyboard.addKey(Phaser.Keyboard.M);
     E_Key.onDown.add(keyDown, this);
     E_Key.onUp.add(keyUp, this);
     E_Key.climber = E;
     E.key = E_Key;
 
-    A_Key = Climb.game.input.keyboard.addKey(Phaser.Keyboard.U);
+    A_Key = Climb.game.input.keyboard.addKey(Phaser.Keyboard.I);
     A_Key.onDown.add(keyDown, this);
     A_Key.onUp.add(keyUp, this);
     A_Key.climber = A;
@@ -737,7 +737,7 @@ function createInputButtons() {
     optionsBt.events.onInputUp.add(optionsShow, this);
     userinterface.add(optionsBt.group);
 
-    if (Climb.game.device.touch) {
+    if (!Climb.game.device.touch) {
         touchinterface.visible = false;
     }
 }
